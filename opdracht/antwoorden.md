@@ -12,12 +12,12 @@ Chinese Grand Prix    Shanghai International Circuit
 
 2. Copy paste je gemaakte SQL query hieronder
 
-SELECT races.name AS "Race_Naam", drivers.surname AS "Achternaam", driver_standing.points FROM races JOIN driver_standing ON driver_standing.raceId = races.raceId JOIN drivers WHERE races.year = "2017" AND driver_standing.points = 10
+SELECT races.name AS "Race_Naam", drivers.surname AS "Achternaam", driver_standing.points FROM races JOIN driver_standing ON driver_standing.raceId = races.raceId JOIN drivers ON driver_standing.driverId = drivers.driverId WHERE races.year = "2017" AND driver_standing.points = 10
 
-Race_Naam    Achternaam    points    
-Australian Grand Prix    Hamilton    10    
-Australian Grand Prix    Heidfeld    10    
-Australian Grand Prix    Rosberg    10    
+Race_Naam	Achternaam	points	
+Australian Grand Prix	Verstappen	10	
+Chinese Grand Prix	Sainz	10	
+Bahrain Grand Prix	Sainz	10	
 
 
 3. Copy paste je gemaakte SQL query hieronder
@@ -39,7 +39,7 @@ McLaren	Australian Grand Prix
 
 5. Copy paste je gemaakte SQL query hieronder
 
-SELECT circuits.name AS "circuit_Naam", circuits.country AS "circuit_Land", races.name AS "Races", drivers.surname FROM races LEFT JOIN circuits ON races.circuitId = circuits.circuitId JOIN drivers ON drivers.driverId = drivers.driverId WHERE races.year = "1950" AND drivers.surname LIKE "F%"
+SELECT circuits.name AS "circuit_Naam", circuits.country AS "circuit_Land", races.name AS "Races", drivers.surname AS "Voornaam" FROM races LEFT JOIN circuits ON races.circuitId = circuits.circuitId JOIN drivers ON drivers.driverId = drivers.driverId WHERE races.year = "1950" AND drivers.surname LIKE "F%"
 
 circuit_Naam	circuit_Land	Races	surname	
 Silverstone Circuit	UK	British Grand Prix	Fisichella	
